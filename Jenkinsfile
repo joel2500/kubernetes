@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        PATH = "E:\\minikube\\minikube;$PATH"
+        PATH = "E:\\minikube\\minikube;$env:PATH"
     }
     stages {
         stage('git') {
