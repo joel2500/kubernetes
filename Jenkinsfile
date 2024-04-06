@@ -11,8 +11,8 @@ pipeline {
         }
         stage('kubernetes deployment') {
             steps {
-                bat 'kubectl apply -f nginx-deployment.yml'
-                bat 'kubectl apply -f nginx-service.yaml'
+                bat 'kubectl apply -f nginx-deployment.yml --validate=false'
+                bat 'kubectl apply -f nginx-service.yaml --validate=false'
                 bat 'minikube service name --url'
             }
         }                             
